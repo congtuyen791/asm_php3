@@ -249,6 +249,27 @@
       width: 500px;
     }
   }
+  .btn-primary{
+    margin-top: 10px;
+    width: 180px;
+    height: 50px;
+    background: rgb(26, 81, 145);
+    text-align: center;
+    line-height: 50px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.15px;
+    text-decoration: none;
+    color: #f9f9f9;
+  }
+  .btn-primary:hover{
+    box-shadow: 8px 8px 16px #d1d9e6bb, -8px -8px 16px #f9f9f9b6;
+    border-radius: 28px;
+    cursor: pointer;
+  }
   .btn-info{
     margin-top: 10px;
     width: 180px;
@@ -268,4 +289,5 @@
   .btn-info:hover{
     box-shadow: 8px 8px 16px #d1d9e6bb, -8px -8px 16px #f9f9f9b6;
     border-radius: 28px;
+    cursor: pointer;
   }

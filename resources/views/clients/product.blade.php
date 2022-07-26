@@ -50,7 +50,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -162,7 +162,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -246,7 +246,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>
@@ -274,7 +274,7 @@
                 </div>
                 <div class="product-btm">
                   <a href="{{asset('/product-detail')}}" class="d-block">
-                    <h4>Latest men's sneaker</h4>
+                    <h4>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h4>
                   </a>
                   <div class="mt-3">
                     <span class="mr-4">$25.00</span>

@@ -8,20 +8,22 @@
   <body>
     <div class="main">
       <div class="container a-container" id="a-container">
-        <form class="form" id="a-form" method="" action="">
+        <form class="form" id="a-form" method="" action="{{asset('/')}}">
           <h2 class="form_title title">Create Account</h2>
           <input class="form__input" type="text" placeholder="Name">
           <input class="form__input" type="text" placeholder="Email">
           <input class="form__input" type="password" placeholder="Password">
-          <button class="form__button button submit">SIGN UP</button>
+          <!-- <button class="form__button button submit" type="submit">SIGN UP</button> -->
+          <button class="btn btn-primary">SIGN UP</button>
         </form>
       </div>
       <div class="container b-container" id="b-container">
-        <form class="form" id="b-form" method="" action="">
+        <form class="form" id="b-form" method="" action="{{asset('/')}}">
           <h2 class="form_title title">Sign in to Website</h2>
           <input class="form__input" type="text" placeholder="Email">
           <input class="form__input" type="password" placeholder="Password"><a class="form__link">Forgot your password?</a>
-          <button class="form__button button submit">SIGN IN</button>
+          <!-- <button class="form__button button submit">SIGN IN</button> -->
+          <button class="btn btn-primary">SIGN IN</button>
         </form>
       </div>
       <div class="switch" id="switch-cnt">

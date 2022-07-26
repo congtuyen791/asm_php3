@@ -8,11 +8,11 @@
     <div class="container">
       <div class="banner_content d-md-flex justify-content-between align-items-center">
         <div class="mb-3 mb-md-0">
-          <h2>Product Checkout</h2>
+          <h2>Kiểm tra sản phẩm</h2>
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
-        <a href="{{asset('/')}}">Trang chủ</a>
+          <a href="{{asset('/')}}">Trang chủ</a>
           <a href="{{asset('/checkout')}}">Thanh toán</a>
         </div>
       </div>
@@ -27,14 +27,12 @@
     <div class="returning_customer">
       <div class="check_title">
         <h2>
-          Returning Customer?
-          <a href="#">Click here to login</a>
+          Phản hồi khách hàng?
+          <a href="#">Nhấn vào đây để đăng nhập</a>
         </h2>
       </div>
       <p>
-        If you have shopped with us before, please enter your details in the
-        boxes below. If you are a new customer, please proceed to the
-        Billing & Shipping section.
+        Nếu bạn đã mua sắm với chúng tôi trước đây, vui lòng nhập thông tin chi tiết của bạn vào ô bên dưới. Nếu bạn là khách hàng mới, vui lòng chuyển đến phần Thanh toán & Giao hàng.
       </p>
       <form class="row contact_form" action="#" method="post" novalidate="novalidate">
         <div class="col-md-6 form-group p_star">
@@ -47,11 +45,11 @@
         </div>
         <div class="col-md-12 form-group">
           <button type="submit" value="submit" class="btn submit_btn">
-            Send Message
+            Gửi tin nhắn
           </button>
           <div class="creat_account">
             <input type="checkbox" id="f-option" name="selector" />
-            <label for="f-option">Remember me</label>
+            <label for="f-option">Nhớ tôi</label>
           </div>
           <a class="lost_pass" href="#">Lost your password?</a>
         </div>
@@ -60,17 +58,17 @@
     <div class="cupon_area">
       <div class="check_title">
         <h2>
-          Have a coupon?
-          <a href="#">Click here to enter your code</a>
+          Có phiếu giảm giá?
+          <a href="#">Bấm vào đây để nhập mã của bạn</a>
         </h2>
       </div>
       <input type="text" placeholder="Enter coupon code" />
-      <a class="tp_btn" href="#">Apply Coupon</a>
+      <a class="tp_btn" href="#">ÁP DỤNG PHIẾU GIẢM GIÁ</a>
     </div>
     <div class="billing_details">
       <div class="row">
         <div class="col-lg-8">
-          <h3>Billing Details</h3>
+          <h3>Chi tiết thanh toán</h3>
           <form class="row contact_form" action="#" method="post" novalidate="novalidate">
             <div class="col-md-6 form-group p_star">
               <input type="text" class="form-control" id="first" name="name" />
@@ -123,14 +121,14 @@
             <div class="col-md-12 form-group">
               <div class="creat_account">
                 <input type="checkbox" id="f-option2" name="selector" />
-                <label for="f-option2">Create an account?</label>
+                <label for="f-option2">Tạo một tài khoản?</label>
               </div>
             </div>
             <div class="col-md-12 form-group">
               <div class="creat_account">
-                <h3>Shipping Details</h3>
+                <h3>Chi tiết vận chuyển</h3>
                 <input type="checkbox" id="f-option3" name="selector" />
-                <label for="f-option3">Ship to a different address?</label>
+                <label for="f-option3">Gửi đến một địa chỉ khác?</label>
               </div>
               <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
             </div>
@@ -138,7 +136,7 @@
         </div>
         <div class="col-lg-4">
           <div class="order_box">
-            <h2>Your Order</h2>
+            <h2>Đơn hàng của bạn</h2>
             <ul class="list">
               <li>
                 <a href="#">Product
@@ -209,7 +207,7 @@
               <label for="f-option4">I’ve read and accept the </label>
               <a href="#">terms & conditions*</a>
             </div>
-            <a class="main_btn" href="#">Proceed to Paypal</a>
+            <a class="main_btn" href="#">Đặt hàng</a>
           </div>
         </div>
       </div>

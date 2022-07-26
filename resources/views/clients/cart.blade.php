@@ -10,12 +10,12 @@
     <div class="container">
       <div class="banner_content d-md-flex justify-content-between align-items-center">
         <div class="mb-3 mb-md-0">
-          <h2>Cart</h2>
+          <h2>Giỏ hàng</h2>
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
-          <a href="index.html">Home</a>
-          <a href="cart.html">Cart</a>
+          <a href="{{asset('/')}}">Trang chủ</a>
+          <a href="{{asset('/contact')}}">Liên hệ</a>
         </div>
       </div>
     </div>
@@ -42,10 +42,10 @@
               <td>
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/cart-1.jpg" alt="" />
+                    <img src="{{asset('img/noi-that/ghe-1-xanh.jpg')}}" style="width: 80px; height: 80px" alt="" />
                   </div>
                   <div class="media-body">
-                    <p>Minimalistic shop for multipurpose use</p>
+                    <p>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</p>
                   </div>
                 </div>
               </td>
@@ -71,10 +71,10 @@
               <td>
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/cart-1.jpg" alt="" />
+                    <img src="{{asset('img/noi-that/ghe-1-xanh.jpg')}}" style="width: 80px; height: 80px" alt="" />
                   </div>
                   <div class="media-body">
-                    <p>Minimalistic shop for multipurpose use</p>
+                    <p>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</p>
                   </div>
                 </div>
               </td>
@@ -100,10 +100,10 @@
               <td>
                 <div class="media">
                   <div class="d-flex">
-                    <img src="img/product/single-product/cart-1.jpg" alt="" />
+                    <img src="{{asset('img/noi-that/ghe-1-xanh.jpg')}}" style="width: 80px; height: 80px" alt="" />
                   </div>
                   <div class="media-body">
-                    <p>Minimalistic shop for multipurpose use</p>
+                    <p>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</p>
                   </div>
                 </div>
               </td>
@@ -127,13 +127,13 @@
             </tr>
             <tr class="bottom_button">
               <td>
-                <a class="gray_btn" href="#">Update Cart</a>
+                <a class="gray_btn" href="#">Cập nhật gỏ hàng</a>
               </td>
               <td></td>
               <td></td>
               <td>
                 <div class="cupon_text">
-                  <input type="text" placeholder="Coupon Code" />
+                  <input type="text" placeholder="Nhập code" />
                   <a class="main_btn" href="#">Apply</a>
                   <a class="gray_btn" href="#">Close Coupon</a>
                 </div>
@@ -196,8 +196,8 @@
               <td></td>
               <td>
                 <div class="checkout_btn_inner">
-                  <a class="gray_btn" href="#">Continue Shopping</a>
-                  <a class="main_btn" href="#">Proceed to checkout</a>
+                  <a class="gray_btn" href="{{asset('/product')}}">Tiếp tục mua sắm</a>
+                  <a class="main_btn" href="{{asset('/checkout')}}">Thanh toán</a>
                 </div>
               </td>
             </tr>

@@ -7,7 +7,7 @@
     <div class="container">
       <div class="banner_content d-md-flex justify-content-between align-items-center">
         <div class="mb-3 mb-md-0">
-          <h2>Product Details</h2>
+          <h2>Thông tin chi tiết sản phẩm</h2>
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
@@ -29,24 +29,24 @@
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-                <img src="img/product/single-product/s-product-s-2.jpg" alt="" />
+                <img src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 60px; height: 60px" alt="" />
               </li>
               <li data-target="#carouselExampleIndicators" data-slide-to="1">
-                <img src="img/product/single-product/s-product-s-3.jpg" alt="" />
+                <img src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 60px; height: 60px"  alt="" />
               </li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2">
-                <img src="img/product/single-product/s-product-s-4.jpg" alt="" />
+                <img src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 60px; height: 60px"  alt="" />
               </li>
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="First slide" />
+                <img class="d-block w-100" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" alt="First slide" />
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="Second slide" />
+                <img class="d-block w-100" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" alt="Second slide" />
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="Third slide" />
+                <img class="d-block w-100" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" alt="Third slide" />
               </div>
             </div>
           </div>
@@ -54,25 +54,30 @@
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
-          <h3>Faded SkyBlu Denim Jeans</h3>
+          <h3>Ghế Văn Phòng Chân Quỳ MOHO CALLOSO 701</h3>
           <h2>$149.99</h2>
           <ul class="list">
             <li>
               <a class="active" href="#">
-                <span>Category</span> : Household</a>
+                <span>Loại</span> : Ghế</a>
             </li>
             <li>
-              <a href="#"> <span>Availibility</span> : In Stock</a>
+              <a href="#"> <span>Trạng thái</span> : còn hàng</a>
             </li>
           </ul>
           <p>
-            Mill Oil is an innovative oil filled radiator with the most
-            modern technology. If you are looking for something that can
-            make your interior look awesome, and at the same time give you
-            the pleasant warm feeling during the winter.
+            Chất liệu:
+
+            - Khung ghế: nhựa cao cấp
+
+            - Tựa lưng và nệm ghế: vải lưới mềm mại thoáng khí
+
+            - Chân ghế: thép sơn tĩnh điện
+
+            🎁 Ưu đãi 5% khi mua bất kỳ 02 sản phẩm thuộc danh mục Phòng Làm Việc
           </p>
           <div class="product_count">
-            <label for="qty">Quantity:</label>
+            <label for="qty">Số lượng:</label>
             <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty" />
             <button class="increase items-count" type="button">
               <i class="lnr lnr-chevron-up"></i>
@@ -82,7 +87,7 @@
             </button>
           </div>
           <div class="card_area">
-            <a class="main_btn" href="#">Add to Cart</a>
+            <a class="main_btn" href="{{asset('/cart')}}">Thêm vào giỏ hàng</a>
             <a class="icon_btn" href="#">
               <i class="lnr lnr lnr-diamond"></i>
             </a>
@@ -102,48 +107,25 @@
   <div class="container">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mô tả</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Specification</a>
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Chi tiết sản phẩm</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Comments</a>
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Bình luận</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
+        <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Nhận xét</a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
         <p>
-          Beryl Cook is one of Britain’s most talented and amusing artists
-          .Beryl’s pictures feature women of all shapes and sizes enjoying
-          themselves .Born between the two world wars, Beryl Cook eventually
-          left Kendrick School in Reading at the age of 15, where she went
-          to secretarial school and then into an insurance office. After
-          moving to London and then Hampton, she eventually married her next
-          door neighbour from Reading, John Cook. He was an officer in the
-          Merchant Navy and after he left the sea in 1956, they bought a pub
-          for a year before John took a job in Southern Rhodesia with a
-          motor company. Beryl bought their young son a box of watercolours,
-          and when showing him how to use it, she decided that she herself
-          quite enjoyed painting. John subsequently bought her a child’s
-          painting set for her birthday and it was with this that she
-          produced her first significant work, a half-length portrait of a
-          dark-skinned lady with a vacant expression and large drooping
-          breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+        Beryl Cook là một trong những nghệ sĩ tài năng và hài hước nhất nước Anh. Những bức tranh của Beirl có hình ảnh những người phụ nữ ở mọi hình dạng và kích cỡ đang tận hưởng cuộc sống của mình. trường học và sau đó vào một văn phòng bảo hiểm. Sau khi chuyển đến London và sau đó là Hampton, cuối cùng cô kết hôn với người hàng xóm kế bên từ Reading, John Cook. Anh ta là một sĩ quan trong Hải quân Thương nhân và sau khi anh ta rời biển vào năm 1956, họ mua một quán rượu trong một năm trước khi John nhận việc ở Nam Rhodesia với một công ty động cơ. Beryl đã mua cho cậu con trai nhỏ của họ một hộp màu nước và khi chỉ cho cậu cách sử dụng nó, cô ấy quyết định rằng bản thân cô ấy khá thích vẽ tranh. John sau đó đã mua cho cô một bộ tranh của đứa trẻ nhân dịp sinh nhật của cô và chính nhờ đó mà cô đã cho ra đời tác phẩm quan trọng đầu tiên của mình, một bức chân dung dài bằng nửa chiều dài của một phụ nữ da ngăm với vẻ mặt trống rỗng và bộ ngực xệ lớn. Nó được đặt tên một cách khéo léo là 'Hangover' bởi chồng của Beryl và
         </p>
         <p>
-          It is often frustrating to attempt to plan meals that are designed
-          for one. Despite this fact, we are seeing more and more recipe
-          books and Internet websites that are dedicated to the act of
-          cooking for one. Divorce and the death of spouses or grown
-          children leaving for college are all reasons that someone
-          accustomed to cooking for more than one would suddenly need to
-          learn how to adjust all the cooking practices utilized before into
-          a streamlined plan of cooking that is more efficient for one
-          person creating less
+        Việc lên kế hoạch các bữa ăn được thiết kế riêng cho một người thường rất khó chịu. Mặc dù vậy, chúng ta đang thấy ngày càng nhiều sách dạy công thức và các trang web Internet dành riêng cho việc nấu ăn. Ly hôn và cái chết của vợ / chồng hoặc con cái lớn lên đại học là tất cả những lý do mà ai đó đã quen nấu ăn cho nhiều người đột nhiên cần học cách điều chỉnh tất cả các phương pháp nấu ăn được sử dụng trước đây thành một kế hoạch nấu ăn hợp lý để hiệu quả hơn cho một người. người tạo ra ít hơn
         </p>
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -280,7 +262,7 @@
           </div>
           <div class="col-lg-6">
             <div class="review_box">
-              <h4>Post a comment</h4>
+              <h4>Đăng bình luận</h4>
               <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                 <div class="col-md-12">
                   <div class="form-group">
@@ -439,7 +421,7 @@
           </div>
           <div class="col-lg-6">
             <div class="review_box">
-              <h4>Add a Review</h4>
+              <h4>Thêm một bài đánh giá</h4>
               <p>Your Rating:</p>
               <ul class="list">
                 <li>
