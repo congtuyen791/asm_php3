@@ -35,7 +35,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -63,7 +63,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -91,7 +91,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -119,7 +119,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -147,7 +147,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -175,7 +175,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -203,7 +203,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -231,7 +231,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -259,7 +259,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-product">
                 <div class="product-img">
-                <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" /> 
+                  <img class="card-img" src="{{asset('/img/noi-that/ghe-1-xanh.jpg')}}" style="width: 254px; height: 254px;" alt="" />
                   <div class="p_icon">
                     <a href="{{asset('/product-detail')}}">
                       <i class="ti-eye"></i>
@@ -330,30 +330,6 @@
                   <a href="#">Nhỏ</a>
                 </li>
               </ul>
-            </div>
-          </aside>
-
-          <aside class="left_widgets p_filter_widgets">
-            <div class="l_w_title">
-              <h3>Tìm kiếm</h3>
-            </div>
-            <div class="widgets_inner">
-
-            </div>
-          </aside>
-
-          <aside class="left_widgets p_filter_widgets">
-            <div class="l_w_title">
-              <h3>Price Filter</h3>
-            </div>
-            <div class="widgets_inner">
-              <div class="range_item">
-                <div id="slider-range"></div>
-                <div class="">
-                  <label for="amount">Price : </label>
-                  <input type="text" id="amount" readonly />
-                </div>
-              </div>
             </div>
           </aside>
         </div>

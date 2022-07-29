@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::prefix('/')->name('clients.')->group(function () {
+
+// });
 
 Route::get('/', function () {
     return view('home');
@@ -33,4 +36,7 @@ Route::get('/user', function () {
 });
 Route::get('/product-detail', function () {
     return view('clients.product-detail');
+});
+Route::get('/admin/layouts', function () {
+    return view('admin.layouts.main');  
 });

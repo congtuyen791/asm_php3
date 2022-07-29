@@ -34,7 +34,7 @@
       <p>
         Nếu bạn đã mua sắm với chúng tôi trước đây, vui lòng nhập thông tin chi tiết của bạn vào ô bên dưới. Nếu bạn là khách hàng mới, vui lòng chuyển đến phần Thanh toán & Giao hàng.
       </p>
-      <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+      <form class="row contact_form" action="" method="" novalidate="novalidate">
         <div class="col-md-6 form-group p_star">
           <input type="text" class="form-control" id="name" name="name" value=" " />
           <span class="placeholder" data-placeholder="Username or Email"></span>

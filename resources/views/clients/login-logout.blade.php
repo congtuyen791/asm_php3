@@ -8,7 +8,7 @@
   <body>
     <div class="main">
       <div class="container a-container" id="a-container">
-        <form class="form" id="a-form" method="" action="{{asset('/')}}">
+        <form class="form" id="a-form" method="" action="{{asset('/admin/layouts')}}">
           <h2 class="form_title title">Create Account</h2>
           <input class="form__input" type="text" placeholder="Name">
           <input class="form__input" type="text" placeholder="Email">
@@ -18,7 +18,7 @@
         </form>
       </div>
       <div class="container b-container" id="b-container">
-        <form class="form" id="b-form" method="" action="{{asset('/')}}">
+        <form class="form" id="b-form" method="" action="{{asset('/admin/layouts')}}">
           <h2 class="form_title title">Sign in to Website</h2>
           <input class="form__input" type="text" placeholder="Email">
           <input class="form__input" type="password" placeholder="Password"><a class="form__link">Forgot your password?</a>
