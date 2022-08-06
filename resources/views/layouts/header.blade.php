@@ -76,7 +76,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{asset('user')}}" class="icons">
+                    <a href="{{route('auth.getLogin')}}" class="icons">
                       <i class="ti-user" aria-hidden="true"></i>
                     </a>
                   </li>
