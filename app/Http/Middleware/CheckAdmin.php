@@ -18,10 +18,13 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->role == 1){
+            if(Auth::user()->role == 1 && Auth::user()->status == 1){
                 return $next($request);
-            }else{
+            }elseif((Auth::user()->role == 0 || Auth::user()->role == 1) && Auth::user()->status == 1){
                 return redirect('/');
+            } else {
+                // dd(Auth::user()->name);
+                return redirect()->route('logout');
             }
         }else{
             return redirect()->route('auth.getLogin');

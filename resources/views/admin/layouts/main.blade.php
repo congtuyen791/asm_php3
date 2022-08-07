@@ -92,6 +92,7 @@
               {{ Auth::user()->name }}
               @endif
             </a>
+            <a href="{{route('logout')}}" class="d-block btn btn-danger">Thoát</a>
           </div>
         </div>
 
@@ -158,6 +159,40 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
+                  Size
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('admin.size.list')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List size</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Bình luận
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('admin.comments.list')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List comment</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
                   Đơn hàng
                   <i class="right fas fa-angle-left"></i>
                 </p>
@@ -187,6 +222,14 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Về trang khách hàng
+                </p>
+              </a>
             </li>
           </ul>
         </nav>

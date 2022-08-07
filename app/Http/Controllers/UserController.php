@@ -11,7 +11,7 @@ class UserController extends Controller
         return view('admin.home');
     }
     public function index() {
-        $users = User::all();
+        $users = User::select('*')->orderBy('id', 'desc')->paginate(10);
         return view('admin.user.list',['user_list' => $users]);
     }
     public function updateRole(User $user) {

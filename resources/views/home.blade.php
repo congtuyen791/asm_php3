@@ -79,89 +79,35 @@
         </div>
 
         <div class="row">
+            @foreach($product as $product)
             <div class="col-lg-4 col-md-6">
                 <div class="single-product">
                     <div class="product-img">
-                        <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:350px; height:419px" alt="" />
+                        <img class="img-fluid w-100" src="{{asset($product->avatar)}}" style="width:350px; height:419px" alt="" />
                         <div class="p_icon">
-                            <a href="{{asset('/product-detail')}}">
+                            <a href="{{route('productDetail', $product->id)}}">
                                 <i class="ti-eye"></i>
                             </a>
                             <a href="#">
                                 <i class="ti-heart"></i>
                             </a>
-                            <a href="{{asset('/cart')}}">
+                            <a href="{{route('addCart', $product->id)}}">
                                 <i class="ti-shopping-cart"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product-btm">
-                        <a href="{{asset('/product-detail')}}" class="d-block">
-                            <h4>Bàn ăn Peak hiện đại mặt Ceramic vân mây</h4>
+                        <a href="{{route('productDetail', $product->id)}}" class="d-block">
+                            <h4>{{$product->name}}</h4>
                         </a>
                         <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
+                            <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
+                            <del>{{$product->name}} <sup>đ</sup></del>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="{{asset('img/noi-that/ghe-1-1.jpg')}}" style="width:350px; height:419px" alt="" />
-                        <div class="p_icon">
-                            <a href="{{asset('/product-detail')}}">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="{{asset('/cart')}}">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Armchari Osaka Bọc Vải SO65</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:350px; height:419px" alt="" />
-                        <div class="p_icon">
-                            <a href="{{asset('/product-detail')}}">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="{{asset('/cart')}}">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="{{asset('/product-detail')}}" class="d-block">
-                            <h4>Bàn ăn Peak hiện đại mặt Ceramic vân mây</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -198,130 +144,49 @@
 
         <div class="row">
             <div class="col-lg-6">
+            @foreach($sofa as $item)
                 <div class="new_product">
-                    <h5 class="text-uppercase">Mẫu giường mới nhất 2022</h5>
-                    <h3 class="text-uppercase">Giường Dubai</h3>
+                    <h5 class="text-uppercase">Mẫu Sofa mới nhất 2022</h5>
+                    <h3 class="text-uppercase">{{$item->name}}</h3>
                     <div class="product-img">
-                        <img class="img-fluid" src="{{asset('/img/noi-that/giuong-dubai-go-vai-4.jpg')}}" style="width: 500px; height:200px;" alt="" />
+                        <img class="img-fluid" src="{{asset($item->avatar)}}" style="width: 400px; height:200px;" alt="" />
                     </div>
-                    <h4>$120.70</h4>
-                    <a href="{{asset('/cart')}}" class="main_btn">Add to cart</a>
+                    <h4>{{$item->price}} <sup>đ</sup></h4>
+                    <a href="{{route('addCart', $product->id)}}" class="main_btn">Add to cart</a>
                 </div>
+                @endforeach
             </div>
-
             <div class="col-lg-6 mt-5 mt-lg-0">
                 <div class="row">
+                    @foreach($product_2 as $product)
                     <div class="col-lg-6 col-md-6">
                         <div class="single-product">
                             <div class="product-img">
-                                <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:255px; height:255px" alt="" />
+                                <img class="img-fluid w-100" src="{{asset($product->avatar)}}" style="width:255px; height:255px" alt="" />
                                 <div class="p_icon">
-                                    <a href="#">
+                                    <a href="{{route('productDetail', $product->id)}}">
                                         <i class="ti-eye"></i>
                                     </a>
                                     <a href="#">
                                         <i class="ti-heart"></i>
                                     </a>
-                                    <a href="#">
+                                    <a href="{{route('addCart', $product->id)}}">
                                         <i class="ti-shopping-cart"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Nike latest sneaker</h4>
+                                <a href="{{route('productDetail', $product->id)}}" class="d-block">
+                                    <h4>{{$product->name}}</h4>
                                 </a>
                                 <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
+                                    <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
+                                    <del>{{$product->price}} <sup>đ</sup></del>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:255px; height:255px" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Nike latest sneaker</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:255px; height:255px" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Nike latest sneaker</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="{{asset('img/noi-that/ban-1.jpg')}}" style="width:255px; height:255px" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Nike latest sneaker</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -27,4 +27,13 @@ class Product extends Model
     public function size() {
         return $this->belongsTo(Size::class, 'size_id', 'id');
     }
+    public function comments() {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+    public function carts() {
+        return $this->belongsTo(Cart::class, 'product_id', 'id');
+    }
+    public function orders() {
+        return $this->belongsTo(Order::class, 'product_id', 'id');
+    }
 }

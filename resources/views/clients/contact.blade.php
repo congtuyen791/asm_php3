@@ -10,7 +10,7 @@
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
-          <a href="{{asset('/')}}">Trang chủ</a>
+        <a href="{{route('home')}}">Trang chủ</a>
           <a href="{{asset('/contact')}}">Liên hệ</a>
         </div>
       </div>
