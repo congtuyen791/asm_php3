@@ -5,22 +5,25 @@
     <div class="card">
         <div class="card-body register-card-body">
             <p class="login-box-msg">Đăng ký thành viên mới</p>
-
             <form action="{{route('auth.postRegister')}}" method="post">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Full name" name="name">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-user"></span>
+                            @if ($errors->has('password'))
+                            <span class="fas fa-user">{{$errors->first('name')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <input type="text" class="form-control" placeholder="Email" name="email">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            @if ($errors->has('password'))
+                            <span class="fas fa-envelope">{{$errors->first('email')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -28,7 +31,9 @@
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                            @if ($errors->has('password'))
+                            <span class="fas fa-lock">{{$errors->first('password')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -38,7 +43,7 @@
                             <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                             <label for="agreeTerms">
                                 Tôi đồng ý với các
-                                    <a href="#"> điều khoản</a>
+                                <a href="#"> điều khoản</a>
                             </label>
                         </div>
                     </div>
@@ -62,7 +67,9 @@
                 </a>
             </div>
 
-            <a href="{{route('auth.getLogin')}}" class="text-center">Tôi đã có tư cách thành viên</a>
+            <a href="{{route('auth.getLogin')}}" class="text-center">Tôi đã có tư cách thành viên</a><br>
+            <a href="{{route('home')}}" class="text-center">về trang chủ</a>
+
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

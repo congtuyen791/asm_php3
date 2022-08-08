@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +20,13 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(RegisterRequest $request)
     {
+        $request->validate([
+            'name' => 'required|min:6|max:32',
+            'email' => 'required|min:6|max:32|email',
+            'password' => 'required|min:6',
+        ]);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -30,7 +37,11 @@ class AuthController extends Controller
         $user->save();
         return redirect()->route('auth.getLogin');
     }
-    public function postLogin(Request $request) {
+    public function postLogin(UserRequest $request) {
+        $request->validate([
+            'email' => 'required|min:6|max:32|email',
+            'password' => 'required|min:6|max:32',
+        ]);
         $data = $request->all();
         $email = $data['email'];
         $password = $data['password'];

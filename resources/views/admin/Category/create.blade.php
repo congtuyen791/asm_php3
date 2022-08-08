@@ -11,6 +11,9 @@
         <div class="form-group">
             <label for="">Tên danh mục</label>
             <input type="text" name="name" placeholder="Nhập vào tên danh mục" id="" class="form-control" >
+            @if ($errors->has('name'))
+            <span class="text-danger">{{$errors->first('name')}}</span>
+            @endif
         </div>
         <div>
             <button class="btn btn-primary" type="submit">Thêm mới</button>

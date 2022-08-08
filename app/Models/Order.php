@@ -11,7 +11,6 @@ class Order extends Model
     public $timestamps = 'orders';
     protected $fillable = [
         'user_id',
-        'product_id',
         'ngay_giao',
         'noi_giao_hang',
         'status',
@@ -22,5 +21,8 @@ class Order extends Model
     }
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+    public function order_details(){
+        return $this->hasMany(OrderDetail::class, 'order_id', 'id');
     }
 }

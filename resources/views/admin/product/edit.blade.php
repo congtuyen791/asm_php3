@@ -11,14 +11,23 @@
         <div class="form-group">
             <label for="">Tên sản phẩm</label>
             <input type="text" name="name" value="{{$product->name}}" placeholder="Nhập vào tên sản phẩm" id="" class="form-control">
+            @if ($errors->has('name'))
+            <span class="text-danger">{{$errors->first('name')}}</span>
+            @endif
         </div>
         <div class="form-group">
             <label for="">Giá sản phẩm</label>
             <input type="number" name="price" value="{{$product->price}}" placeholder="Nhập vào giá sản phẩm" id="" class="form-control">
+            @if ($errors->has('price'))
+            <span class="text-danger">{{$errors->first('price')}}</span>
+            @endif
         </div>
         <div class="form-group">
             <label for="">Số lượng sản phẩm</label>
             <input type="number" name="quantity" value="{{$product->quantity}}" placeholder="Nhập vào số lương sản phẩm" id="" class="form-control">
+            @if ($errors->has('quantity'))
+            <span class="text-danger">{{$errors->first('quantity')}}</span>
+            @endif
         </div>
         <div class="form-group">
             <label class="form-label">Ảnh sản phẩm</label><br>
@@ -29,6 +38,9 @@
         <div class="form-group">
             <label for="">Giá khiến mại</label>
             <input type="number" name="promotion" value="{{$product->promotion}}" placeholder="Có thể nhập giá khuyến mại hoặc không" id="" class="form-control">
+            @if ($errors->has('name'))
+            <span class="text-danger">{{$errors->first('name')}}</span>
+            @endif
         </div>
         <div class="form-group">
             <label for="">Trạng thái</label>
@@ -56,6 +68,9 @@
         <div class="form-group">
             <label for="">Mô tả</label>
             <textarea name="description" id="" value="{{$product->description}}" cols="30" rows="4" class="form-control" placeholder="Nhập vào mô tả sản phẩm...">{{$product->description}}</textarea>
+            @if ($errors->has('description'))
+            <span class="text-danger">{{$errors->first('description')}}</span>
+            @endif
         </div>
         <div>
             <button class="btn btn-primary" type="submit">Cập nhật</button>

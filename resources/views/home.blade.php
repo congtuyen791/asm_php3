@@ -101,8 +101,8 @@
                             <h4>{{$product->name}}</h4>
                         </a>
                         <div class="mt-3">
-                            <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
-                            <del>{{$product->name}} <sup>đ</sup></del>
+                            <span class="mr-4">{{$product->price}} <sup>đ</sup></span>
+                            <!-- <del>{{$product->price}} <sup>đ</sup></del> -->
                         </div>
                     </div>
                 </div>
@@ -180,8 +180,8 @@
                                     <h4>{{$product->name}}</h4>
                                 </a>
                                 <div class="mt-3">
-                                    <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
-                                    <del>{{$product->price}} <sup>đ</sup></del>
+                                    <span class="mr-4">{{$product->price}} <sup>đ</sup></span>
+                                    <!-- <del>{{$product->price}} <sup>đ</sup></del> -->
                                 </div>
                             </div>
                         </div>

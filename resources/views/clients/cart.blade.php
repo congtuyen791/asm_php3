@@ -14,8 +14,8 @@
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
-        <a href="{{route('home')}}">Trang chủ</a>
-          <a href="{{asset('/contact')}}">cart</a>
+          <a href="{{route('home')}}">Trang chủ</a>
+          <a href="{{route('listCart')}}">cart</a>
         </div>
       </div>
     </div>
@@ -28,6 +28,7 @@
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">
+        @if(Auth::user())
         <table class="table">
           <thead>
             <tr>
@@ -72,7 +73,7 @@
               </td>
             </tr>
             <input type="hidden" value="{{$tong_tien += ($item->tong_tien)}}">
-            
+
             @endforeach
             <tr>
               <td></td>
@@ -80,7 +81,7 @@
               <td>
                 <h4>Tổng tiền:</h4>
               </td>
-              <td> 
+              <td>
                 <h4>{{$tong_tien}}</h4>
               </td>
             </tr>
@@ -97,6 +98,23 @@
             </tr>
           </tbody>
         </table>
+        @else
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <h3>Bạn cần đăng nhập để xem giỏ hàng!</h3>
+            </tr>
+          </tbody>
+        </table>
+        @endif
       </div>
     </div>
   </div>

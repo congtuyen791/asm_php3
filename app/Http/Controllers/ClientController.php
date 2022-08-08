@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Product;
 use App\Models\Size;
 use Illuminate\Http\Request;
@@ -26,8 +27,12 @@ class ClientController extends Controller
     }
     public function productDetail(Product $id)
     {
+        $comment = Comment::select('id', 'content', 'user_id', 'product_id')->where('product_id', $id->id)
+        ->orderBy('id', 'desc')->with('user')->with('product')->paginate(10);
+        // dd($comment);
         return view('clients.product-detail', [
             'product' => $id,
+            'comments' => $comment,
         ]);
     }
     public function product()
@@ -79,5 +84,9 @@ class ClientController extends Controller
             'category' => $category,
             'size' => $size,
         ]);
+    }
+
+    public function contact() {
+        return view('clients.contact');
     }
 }

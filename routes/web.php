@@ -5,27 +5,14 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LienHeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Models\Category;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-// Route::prefix('/')->name('clients.')->group(function () {
 
-// });
 
 Route::prefix('/')->name('')->group(function () {
     Route::get('/', [ClientController::class, 'index'])->name('home');
@@ -34,40 +21,26 @@ Route::prefix('/')->name('')->group(function () {
     Route::get('/categoryProducts/{id}', [ClientController::class, 'categoryProducts'])->name('categoryProducts');
     Route::get('/sizeProducts/{id}', [ClientController::class, 'sizeProducts'])->name('sizeProducts');
     Route::get('/searchProduct', [ClientController::class, 'searchProduct'])->name('searchProduct');
-    Route::prefix('')->name('')->group(function () {
-        Route::get('/listCart', [CartController::class, 'listCart'])->name('listCart');
+    // liên hệ
+    Route::get('/contact', [ClientController::class, 'contact'])->name('contact');
+    
+    Route::get('/listCart', [CartController::class, 'listCart'])->name('listCart');
+    
+    Route::middleware('admin')->prefix('')->name('')->group(function () {
+        // giỏ hàng
         Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
         Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
+        // đơn hàng
         Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
         Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
+        Route::get('/order-detail', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
+        // bình luận 
+        Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
+        // liên hệ
+        Route::post('/lien-he', [LienHeController::class, 'create'])->name('lienHe');
     });
 });
 
-
-// Route::get('/', function () {
-//     return view('home');
-// });
-// Route::get('/product', function () {
-//     return view('clients.product');
-// });
-// Route::get('/cart', function () {
-//     return view('clients.cart');
-// });
-Route::get('/checkout', function () {
-    return view('clients.checkout');
-});
-Route::get('/contact', function () {
-    return view('clients.contact');
-});
-// Route::get('/user', function () {
-//     return view('clients.login-logout');
-// });
-Route::get('/product-detail', function () {
-    return view('clients.product-detail');
-});
-// Route::get('/admin/layouts', function () {
-//     return view('admin.layouts.main');  
-// });
 
 Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/home', [UserController::class, 'index_admin'])->name('home');
@@ -108,6 +81,14 @@ Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () 
         Route::get('/edit/{id}', [CommentController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [CommentController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [CommentController::class, 'delete'])->name('delete');
+    });
+    Route::prefix('/orders')->name('orders.')->group(function () {
+        Route::get('/list', [OrderController::class, 'index'])->name('list');
+        Route::delete('/delete/{id}', [OrderController::class, 'delete'])->name('delete');
+    });
+    Route::prefix('/lien-he')->name('lienHe.')->group(function () {
+        Route::get('/list', [LienHeController::class, 'index'])->name('list');
+        Route::delete('/delete/{id}', [LienHeController::class, 'delete'])->name('delete');
     });
 });
 Route::middleware('guest')->prefix('/auth')->name('auth.')->group(function () {

@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     public function listCart(){
-        $carts = Cart::select('*')->with('product')->where('user_id', '=', Auth::user()->id)->get();
-        $tong_tien = 0;
-        // dd($carts);
-        return view('clients.cart', ['cart' => $carts, 'tong_tien' => $tong_tien]);
+        if( Auth::user()) {
+            $carts = Cart::select('*')->with('product')->where('user_id', '=', Auth::user()->id)->get();
+            $tong_tien = 0;
+            // dd($carts);
+            return view('clients.cart', ['cart' => $carts, 'tong_tien' => $tong_tien]);
+        }else{
+            return view('clients.cart');
+        }
     }
     public function addCart($id){
         $cart = Cart::where('product_id',$id)->where('user_id', Auth::user()->id)->first();

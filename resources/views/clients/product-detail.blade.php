@@ -44,10 +44,14 @@
                 <span>Loại</span>: {{ isset($product->category) ? $product->category->name : '' }}</a>
             </li>
             <li>
+              <a class="" href="#">
+                <span>size</span>: {{ isset($product->size) ? $product->size->name : '' }}</a>
+            </li>
+            <li>
               @if($product->status == 1)
-                <a href="#"> <span>Trạng thái</span>: Còn hàng </a>
+              <a href="#"> <span>Trạng thái</span>: Còn hàng </a>
               @else
-                <a href="#"> <span>Trạng thái</span>: Hết hàng </a>
+              <a href="#"> <span>Trạng thái</span>: Hết hàng </a>
               @endif
             </li>
           </ul>
@@ -94,97 +98,53 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="comment_list">
+              @foreach($comments as $comment)
               <div class="review_item">
                 <div class="media">
                   <div class="d-flex">
                     <img src="img/product/single-product/review-1.png" alt="" />
                   </div>
                   <div class="media-body">
-                    <h4>Blake Ruiz</h4>
-                    <h5>12th Feb, 2017 at 05:56 pm</h5>
-                    <a class="reply_btn" href="#">Reply</a>
+                    <h4>{{$comment->user->name}}</h4>
+                    <h5>{{$comment->created_at}}</h5>
+                    <!-- <a class="reply_btn" href="#">Reply</a> -->
                   </div>
                 </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip ex ea commodo
+                  {{$comment->content}}
                 </p>
               </div>
-              <div class="review_item reply">
-                <div class="media">
-                  <div class="d-flex">
-                    <img src="img/product/single-product/review-2.png" alt="" />
-                  </div>
-                  <div class="media-body">
-                    <h4>Blake Ruiz</h4>
-                    <h5>12th Feb, 2017 at 05:56 pm</h5>
-                    <a class="reply_btn" href="#">Reply</a>
-                  </div>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip ex ea commodo
-                </p>
-              </div>
-              <div class="review_item">
-                <div class="media">
-                  <div class="d-flex">
-                    <img src="img/product/single-product/review-3.png" alt="" />
-                  </div>
-                  <div class="media-body">
-                    <h4>Blake Ruiz</h4>
-                    <h5>12th Feb, 2017 at 05:56 pm</h5>
-                    <a class="reply_btn" href="#">Reply</a>
-                  </div>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip ex ea commodo
-                </p>
-              </div>
+              @endforeach
             </div>
           </div>
           <div class="col-lg-6">
             <div class="review_box">
               <h4>Đăng bình luận</h4>
-              <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+              @if(Auth::user())
+              <form class="row contact_form" action="{{route('comment', $product->id)}}" method="post" id="contactForm" novalidate="novalidate">
+                @csrf
                 <div class="col-md-12">
                   <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" />
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" />
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="4" placeholder="Message"></textarea>
+                    @if ($errors->has('content'))
+                    <span class="text-danger">{{$errors->first('content')}}</span>
+                    @endif
                   </div>
                 </div>
                 <div class="col-md-12 text-right">
                   <button type="submit" value="submit" class="btn submit_btn">
-                    Submit Now
+                    Đăng bình luận
                   </button>
                 </div>
               </form>
+              @else
+              <h3>Bạn cần đăng nhập để thực hiện chức năng này!</h3>
+              @endif
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </section>

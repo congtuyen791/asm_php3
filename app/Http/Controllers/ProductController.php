@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Size;
@@ -21,8 +22,15 @@ class ProductController extends Controller
         $size = Size::select('id', 'name')->get();
         return view('admin.product.create', ['category_list' => $categorys, 'size_list' => $size]);
     }
-    public function postCreate(Request $request)
+    public function postCreate(ProductRequest $request)
     {
+        $request->validate([
+            'name' => 'required|min:6|max:50',
+            'price'  => 'required',
+            'quantity'  => 'required',
+            'description' => 'required',
+            'avatar' => 'required',
+        ]);
         $data = new Product();
         $data->fill($request->all());
         if ($request->hasFile('avatar')) {
@@ -55,8 +63,14 @@ class ProductController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(ProductRequest $request)
     {
+        $request->validate([
+            'name' => 'required|min:6|max:50',
+            'price'  => 'required',
+            'quantity'  => 'required',
+            'description' => 'required',
+        ]);
         $product = Product::find($request->id);
         if ($request->hasFile('avatar_up')) {
             $avatar = $request->avatar_up;

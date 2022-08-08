@@ -12,8 +12,6 @@
           <p>Very us move be blessed multiply night</p>
         </div>
         <div class="page_link">
-          <a href="{{route('home')}}">Trang chủ</a>
-          <a href="{{asset('/checkout')}}">Thanh toán</a>
         </div>
       </div>
     </div>

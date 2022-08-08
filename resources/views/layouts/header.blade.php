@@ -12,17 +12,17 @@
           <div class="float-right">
             <ul class="right_side">
               <li>
-                <a href="{{asset('/cart')}}">
+                <a href="{{route('listCart')}}">
                   Giỏ hàng
                 </a>
               </li>
               <li>
-                <a href="{{asset('/cart')}}">
+                <a href="{{route('orderDetail')}}">
                   kiểm tra đơn hàng
                 </a>
               </li>
               <li>
-                <a href="{{asset('/contact')}}">
+                <a href="{{route('contact')}}">
                   Liên hệ với chúng tôi
                 </a>
               </li>
@@ -56,7 +56,7 @@
                   <a href="{{route('product')}}" class="nav-link">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/contact')}}">Liên hệ</a>
+                  <a class="nav-link" href="{{route('contact')}}">Liên hệ</a>
                 </li>
               </ul>
             </div>

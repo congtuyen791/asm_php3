@@ -51,6 +51,9 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class, 'user_id', 'id');
     }
     public function carts(){
-        return $this->belongsTo(Cart::class, 'user_id', 'id');
+        return $this->hasMany(Cart::class, 'user_id', 'id');
+    }
+    public function lienHe(){
+        return $this->belongsTo(LienHe::class, 'user_id', 'id');
     }
 }

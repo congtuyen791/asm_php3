@@ -21,7 +21,6 @@
               <th>Số lượng</th>
               <th>Kích thước</th>
               <th>Avatar</th>
-              <th>Khuyến mại</th>
               <th>Danh mục</th>
               <th>Trạng thái</th>
               <th colspan="2" class="text-center">Chức năng</th>
@@ -36,7 +35,6 @@
               <td>{{$product->quantity}}</td>
               <td>{{ isset($product->size) ? $product->size->name : '' }}</td>
               <td><img src="{{asset($product->avatar)}}" alt="" style="width: 150px;"></td>
-              <td>{{$product->promotion}}</td>
               <td>{{ isset($product->category) ? $product->category->name : '' }}</td>
               @if ($product['status'] == 1)
               <td>

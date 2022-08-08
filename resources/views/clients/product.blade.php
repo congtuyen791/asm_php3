@@ -55,8 +55,8 @@
                     <h4>{{$item->name}}</h4>
                   </a>
                   <div class="mt-3">
-                    <span class="mr-4">{{$item->promotion}} <sup>đ</sup></span>
-                    <del>{{$item->price}} <sup>đ</sup></del>
+                    <span class="mr-4">{{$item->price}} <sup>đ</sup></span>
+                    <!-- <del>{{$item->price}} <sup>đ</sup></del> -->
                   </div>
                 </div>
               </div>

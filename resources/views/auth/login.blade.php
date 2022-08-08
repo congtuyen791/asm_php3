@@ -6,14 +6,15 @@
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Đăng nhập để bắt đầu phiên của bạn</p>
-
             <form action="{{route('auth.postLogin')}}" method="post">
-            @csrf
+                @csrf
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <input type="text" class="form-control" placeholder="Email" name="email">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            @if ($errors->has('email'))
+                            <span class="fas fa-envelope">{{$errors->first('email')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -21,7 +22,9 @@
                     <input type="password" class="form-control" placeholder="Password" name="password">
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
+                            @if ($errors->has('password'))
+                            <span class="fas fa-lock">{{$errors->first('password')}}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -58,6 +61,9 @@
             </p>
             <p class="mb-0">
                 <a href="{{route('auth.getRegister')}}" class="text-center">Đăng ký thành viên mới</a>
+            </p>
+            <p class="mb-0">
+                <a href="{{route('home')}}" class="text-center">Về trang chủ</a>
             </p>
         </div>
         <!-- /.login-card-body -->
