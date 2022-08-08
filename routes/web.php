@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 
-
+// trỏ đến giao diện người dùng
 Route::prefix('/')->name('')->group(function () {
     Route::get('/', [ClientController::class, 'index'])->name('home');
     Route::get('/product-detail/{id}', [ClientController::class, 'productDetail'])->name('productDetail');
@@ -41,7 +41,7 @@ Route::prefix('/')->name('')->group(function () {
     });
 });
 
-
+// trỏ đến trang quản trị
 Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/home', [UserController::class, 'index_admin'])->name('home');
     Route::prefix('/users')->name('users.')->group(function () {
