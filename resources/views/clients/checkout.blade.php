@@ -35,11 +35,15 @@
             <div class="col-md-12 form-group p_star">
               <input type="text" class="form-control" id="email" value="{{Auth::user()->email}}" name="email" disabled />
             </div>
+            <!-- @if (Auth::user()->address == null)
+            <input type="text">
+            @else -->
             <div class="col-md-12 form-group p_star">
               <select class="country_select" disabled>
                 <option value="{{Auth::user()->address}}">{{Auth::user()->address}}</option>
               </select>
             </div>
+            <!-- @endif -->
             <!-- <div class="col-md-12 form-group p_star">
               <input type="text" class="form-control" id="add1" name="add1" />
               <span class="placeholder" data-placeholder="Address line 01"></span>

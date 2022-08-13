@@ -24,11 +24,13 @@ class CategoryController extends Controller
         $data = new Category();
         $data->fill($request->all());
         $data->save();
+        session()->flash('success', 'Bạn đã tạo thành công!');
         return redirect()->route('admin.categorys.list');
     }
     public function delete(Category $id)
     {
         if ($id->delete()) {
+            session()->flash('success', 'Bạn xóa thành công!');
             return redirect()->back();
         }
     }
@@ -43,6 +45,7 @@ class CategoryController extends Controller
         ]);
         $data = Category::find($request->id);
         $data->update(['name' => $request->name]);
+        session()->flash('success', 'Bạn Cập nhật thành công!');
         return redirect()->route('admin.categorys.list');
 
     }

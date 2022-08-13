@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index_admin(){ 
-        return view('admin.home');
-    }
     public function index() {
         $users = User::select('*')->orderBy('id', 'desc')->paginate(10);
         return view('admin.user.list',['user_list' => $users]);

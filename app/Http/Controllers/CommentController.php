@@ -16,6 +16,7 @@ class CommentController extends Controller
     public function delete(Comment $id)
     {
         if ($id->delete()) {
+        session()->flash('comment','Xóa comment thành công!');
             return redirect()->back();
         }
     }

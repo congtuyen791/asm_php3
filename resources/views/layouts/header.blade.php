@@ -64,33 +64,62 @@
             <div class="col-lg-5 pr-0">
               <ul class="nav navbar-nav navbar-right right_nav pull-right">
                 <li class="nav-item">
-                  <a href="#" class="icons">
-                    <i class="ti-search" aria-hidden="true"></i>
-                  </a>
-                </li>
-
-                <li class="nav-item">
                   <a href="{{route('listCart')}}" class="icons">
                     <i class="ti-shopping-cart"></i>
                   </a>
-                </li>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 @if(Auth::check())
-                  <li class="nav-item">
-                    <a href="{{route('auth.getLogin')}}" class="icons">
-                      {{ Auth::user()->name }}
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                  <a href="{{route('logout')}}" class="icons">
-                    <i class="ti-new-window"></i></a>
-                  </a>
+                @if(Auth::user()->role == 1)
+                <li class="nav-item submenu dropdown mb-3">
+                  <a href="#" class="nav-link dropdown-toggle m-b" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="{{route('auth.getLogin')}}" class="icons">
+                        Trang Admin
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{route('profile')}}" class="icons">
+                        Tài khoản của tôi
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{route('logout')}}" class="icons">Đăng xuất</a>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 @else
-                  <li class="nav-item">
-                    <a href="{{route('auth.getLogin')}}" class="icons">
-                      <i class="ti-user" aria-hidden="true"></i>
-                    </a>
-                  </li>
+                <li class="nav-item submenu dropdown mb-3">
+                  <a href="#" class="nav-link dropdown-toggle m-b" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="{{route('profile')}}" class="icons">
+                        Tài khoản của tôi
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{route('logout')}}" class="icons">Đăng xuất</a>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                @endif
+                @else
+                <li class="nav-item submenu dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="ti-user" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a href="{{route('auth.getLogin')}}" class="icons">
+                        Đăng nhập</i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{route('auth.getRegister')}}" class="icons">Đăng ký</a>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
                 @endif
               </ul>
             </div>
