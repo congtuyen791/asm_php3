@@ -9,6 +9,7 @@ use App\Http\Controllers\LienHeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\ThongKeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -26,24 +27,29 @@ Route::prefix('/')->name('')->group(function () {
     
     Route::get('/listCart', [CartController::class, 'listCart'])->name('listCart');
     
+    Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
+    Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
     Route::middleware('admin')->prefix('')->name('')->group(function () {
         // giỏ hàng
-        Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
-        Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
         // đơn hàng
-        Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
-        Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
-        Route::get('/order-detail', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
-        // bình luận 
-        Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
-        // liên hệ
-        Route::post('/lien-he', [LienHeController::class, 'create'])->name('lienHe');
     });
+    Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
+    Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
+    Route::get('/order-detail', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
+    // bình luận 
+    Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
+    // liên hệ
+    Route::post('/lien-he', [LienHeController::class, 'create'])->name('lienHe');
+    
+    Route::post('/cap-nhat-tai-khoan/{id}', [ClientController::class, 'updateUser'])->name('updateUser');
+    Route::get('/cap-nhat-mat-khau', [ClientController::class, 'getUpdateUserPassword'])->name('getUpdateUserPassword');
+    Route::post('/cap-nhat-mat-khau/{id}', [ClientController::class, 'updateUserPassword'])->name('updateUserPassword');
+    Route::get('/trang-ca-nhan', [ClientController::class, 'profile'])->name('profile');
 });
 
 // trỏ đến trang quản trị
 Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () {
-    Route::get('/home', [UserController::class, 'index_admin'])->name('home');
+    Route::get('/home', [ThongKeController::class, 'index'])->name('home');
     Route::prefix('/users')->name('users.')->group(function () {
         Route::get('/list', [UserController::class, 'index'])->name('list');
         Route::post('/role/{user}', [UserController::class, 'updateRole'])->name('role');
@@ -84,7 +90,8 @@ Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () 
     });
     Route::prefix('/orders')->name('orders.')->group(function () {
         Route::get('/list', [OrderController::class, 'index'])->name('list');
-        Route::delete('/delete/{id}', [OrderController::class, 'delete'])->name('delete');
+        Route::post('/update/{id}', [OrderController::class, 'update'])->name('update');
+        Route::get('/order-detail/{id}', [OrderController::class, 'orderDetail'])->name('orderDetail');
     });
     Route::prefix('/lien-he')->name('lienHe.')->group(function () {
         Route::get('/list', [LienHeController::class, 'index'])->name('list');

@@ -42,12 +42,14 @@ class ProductController extends Controller
             $data->avatar = '';
         }
         $data->save();
+        session()->flash('success', 'Tạo mới sản phẩm thành công!');
         return  redirect()->route('admin.products.list');
     }
 
     public function delete(Product $product)
     {
         if ($product->delete()) {
+            session()->flash('success', 'Xóa sản phẩm thành công!');
             return redirect()->back();
         }
     }
@@ -91,6 +93,7 @@ class ProductController extends Controller
             'size_id' => $request->size_id,
             'avatar' => $avatar_up,
         ]);
+        session()->flash('success', 'Cập nhật sản phẩm thành công!');
         return redirect()->route('admin.products.list');
     }
 

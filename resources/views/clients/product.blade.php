@@ -22,6 +22,11 @@
 <!--================Category Product Area =================-->
 <section class="cat_product_area section_gap">
   <div class="container">
+    @if(session()->has('search'))
+    <div class="alert alert-warning text-center">
+      {{ session()->get('search') }}
+    </div>
+    @endif
     <div class="row flex-row-reverse">
       <div class="col-lg-9">
         <div class="product_top_bar">
@@ -92,7 +97,7 @@
             </div>
             <div class="widgets_inner">
               <ul class="list">
-              @foreach($size as $size)
+                @foreach($size as $size)
                 <li>
                   <a href="{{route('sizeProducts', $size->id)}}">{{$size->name}}</a>
                 </li>

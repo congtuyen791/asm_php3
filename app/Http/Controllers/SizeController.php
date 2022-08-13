@@ -24,11 +24,13 @@ class SizeController extends Controller
         $data = new Size();
         $data->fill($request->all());
         $data->save();
+        session()->flash('success', 'Tạo mới thành công!');
         return redirect()->route('admin.size.list');
     }
     public function delete(Size $id)
     {
         if ($id->delete()) {
+            session()->flash('success', 'Xóa thành công!');
             return redirect()->back();
         }
     }
@@ -43,6 +45,7 @@ class SizeController extends Controller
         ]);
         $data = Size::find($request->id);
         $data->update(['name' => $request->name]);
+        session()->flash('success', 'Cập nhật thành công!');
         return redirect()->route('admin.size.list');
     }
 }

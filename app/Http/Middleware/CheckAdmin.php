@@ -24,6 +24,7 @@ class CheckAdmin
                 return redirect('/');
             } else {
                 // dd(Auth::user()->name);
+                session('false', 'Tài khoản của bạn đã bị khóa');
                 return redirect()->route('logout');
             }
         }else{

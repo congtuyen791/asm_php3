@@ -38,8 +38,8 @@
         <div class="form-group">
             <label for="">Giá khiến mại</label>
             <input type="number" name="promotion" value="{{$product->promotion}}" placeholder="Có thể nhập giá khuyến mại hoặc không" id="" class="form-control">
-            @if ($errors->has('name'))
-            <span class="text-danger">{{$errors->first('name')}}</span>
+            @if ($errors->has('promotion'))
+            <span class="text-danger">{{$errors->first('promotion')}}</span>
             @endif
         </div>
         <div class="form-group">

@@ -35,6 +35,7 @@ class AuthController extends Controller
         $user->status = 1;
         // dd($user);
         $user->save();
+        session()->flash('success', 'Bạn đã đăng ký người dùng thành công');
         return redirect()->route('auth.getLogin');
     }
     public function postLogin(UserRequest $request) {
@@ -46,7 +47,11 @@ class AuthController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('admin.home');
+            if(Auth::user()->role === 1 && Auth::user()->status === 1){
+                return redirect()->route('admin.home');
+            }else{
+                return redirect()->route('home');
+            }
         }
         return redirect()->route('auth.getLogin');
     }

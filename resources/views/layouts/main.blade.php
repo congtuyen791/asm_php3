@@ -30,6 +30,16 @@
     <!--================Header Menu Area =================-->
 
     <!--================Home Banner Area =================-->
+    @if(session()->has('success'))
+    <div class="alert alert-success text-center">
+        {{ session()->get('success') }}
+    </div>
+    @endif
+    @if(session()->has('false'))
+    <div class="alert alert-success text-center">
+        {{ session()->get('false') }}
+    </div>
+    @endif
     @yield('content')
     <!--================ End Blog Area =================-->
 

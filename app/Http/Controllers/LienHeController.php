@@ -25,11 +25,13 @@ class LienHeController extends Controller
         $data->fill($request->all());
         $data->user_id = Auth::user()->id;
         $data->save();
+        session()->flash('success', 'Bạn gửi thành công! Chúng tôi sẽ sớm phản hồi lại bạn.');
         return view('clients.contact');
     }
     public function delete(LienHe $id)
     {
         if ($id->delete()) {
+            session()->flash('success', 'Bạn xóa thành công!');
             return redirect()->back();
         }
     }
