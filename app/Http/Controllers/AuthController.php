@@ -47,12 +47,19 @@ class AuthController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            if(Auth::user()->role === 1 && Auth::user()->status === 1){
+            if(Auth::user()->role == 1 && Auth::user()->status == 1){
+                session()->flash('success', 'Đăng nhập thành công');
                 return redirect()->route('admin.home');
-            }else{
+            }elseif(Auth::user()->role == 0 && Auth::user()->status == 1){
+                session()->flash('success', 'Đăng nhập thành công');
                 return redirect()->route('home');
+            }else{
+                session()->flash('false', 'Tài khoản này đã bị khóa!');
+                Auth::logout();
+                return redirect()->route('auth.getLogin');
             }
         }
+        session()->flash('false','Tài khoản hoặc mật khẩu không đúng');
         return redirect()->route('auth.getLogin');
     }
 

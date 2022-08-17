@@ -9,7 +9,7 @@
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>{{count($orders)}}</h3>
+                <h3>{{$orders}}</h3>
 
                 <p>Đơn hàng</p>
             </div>
@@ -24,7 +24,7 @@
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
-                <h3>{{count($products)}}</h3>
+                <h3>{{$products}}</h3>
 
                 <p>Sản phẩm</p>
             </div>
@@ -39,7 +39,7 @@
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
-                <h3>{{count($users)}}</h3>
+                <h3>{{$users}}</h3>
 
                 <p>Người dùng</p>
             </div>
@@ -54,7 +54,7 @@
         <!-- small box -->
         <div class="small-box bg-danger">
             <div class="inner">
-                <h3>{{count($comments)}}</h3>
+                <h3>{{$comments}}</h3>
 
                 <p>Bình luận</p>
             </div>
@@ -96,7 +96,7 @@
                 <!-- DONUT CHART -->
                 <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title">Số lượng sản phẩm theo danh mục</h3>
+                        <h3 class="card-title">Thống kê tất cả các bảng</h3>
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">

@@ -17,9 +17,9 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $products = Product::select('*')->with('category')->with('size')->limit(3)->get();
+        $products = Product::select('*')->where('status', '=', '1')->with('category')->with('size')->limit(3)->get();
 
-        $products_2 = Product::select('*')->orderBy('id', 'desc')->with('category')->with('size')->limit(4)->get();
+        $products_2 = Product::select('*')->where('status', '=', '1')->orderBy('id', 'desc')->with('category')->with('size')->limit(4)->get();
 
         $sofa = DB::table('products')->join('categorys', 'products.category_id', '=', 'categorys.id')->select('products.*')
             ->where('categorys.name', '=', 'sofa')->limit(1)->get();
@@ -28,7 +28,7 @@ class ClientController extends Controller
     }
     public function productDetail(Product $id)
     {
-        $comment = Comment::select('id', 'content', 'user_id', 'product_id')->where('product_id', $id->id)
+        $comment = Comment::select('id', 'content', 'user_id', 'product_id', 'created_at', 'updated_at')->where('product_id', $id->id)
             ->orderBy('id', 'desc')->with('user')->with('product')->paginate(10);
         return view('clients.product-detail', [
             'product' => $id,
@@ -141,7 +141,8 @@ class ClientController extends Controller
             'password_new_xn' => 'required|min:6|max:32',
         ]);
         $user = User::find($request->id);
-        if(Auth::attempt(['password' => $request->password]) ) {
+        // dd($user);
+        if(Auth::attempt(['password' => $request->password, 'email' => $user->email])) {
             if($request->password_new === $request->password_new_xn) {
                 $user->password = bcrypt($request->password_new_xn);
                 $user->save();

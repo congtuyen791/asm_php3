@@ -77,10 +77,12 @@ class OrderController extends Controller
     public function update(Request $request)
     {
         $order = Order::find($request->id);
-        $order->ngay_giao = $request->ngay_giao;
+        if(isset($request->ngay_giao)){
+            $order->ngay_giao = $request->ngay_giao;
+        }
         $order->status = $request->status;
         $order->save();
-        session()->reflash('success', 'Cập nhật đơn hàng thành công!');
+        session()->flash('success', 'Cập nhật đơn hàng thành công!');
         return redirect()->back();
     }
 

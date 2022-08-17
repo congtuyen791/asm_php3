@@ -101,12 +101,18 @@
               @foreach($comments as $comment)
               <div class="review_item">
                 <div class="media">
+                  @if(isset($comment->user->avatar))
                   <div class="d-flex">
-                    <img src="img/product/single-product/review-1.png" alt="" />
+                    <img src="{{asset($comment->user->avatar)}}" style="width: 60px; height: 60px; border-radius: 50%" alt="" />
                   </div>
+                  @else
+                  <div class="d-flex">
+                    <img src="{{asset('img/avatar7.png')}}" style="width: 60px; height: 60px; border-radius: 50%" alt="" />
+                  </div>
+                  @endif
                   <div class="media-body">
                     <h4>{{$comment->user->name}}</h4>
-                    <h5>{{$comment->created_at}}</h5>
+                    <h5 style="padding-left: 20px;">{{$comment->created_at}}</h5>
                     <!-- <a class="reply_btn" href="#">Reply</a> -->
                   </div>
                 </div>

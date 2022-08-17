@@ -39,11 +39,11 @@
                 <td>{{$order->tong_tien}}</td>
                 <td>
                   <select name="status" id="" class="form-control" style="width: 70%;">
-                    <option value="{{$order->status}}" {{($order->status == 0) ? 'selected' : 0}} >Đang xử lý</option>
-                    <option value="{{$order->status}}" {{($order->status == 1) ? 'selected' : 0}}>Xác nhận</option>
-                    <option value="{{$order->status}}" {{($order->status == 2) ? 'selected' : 0}}>Đã giao cho DVVC</option>
-                    <option value="{{$order->status}}" {{($order->status == 3) ? 'selected' : 0}}>Đã nhận</option>
-                    <option value="{{$order->status}}" {{($order->status == 4) ? 'selected' : 0}}>Đã hủy</option>
+                    <option value="0" {{($order->status == 0) ? 'selected' : 0}}>Đang xử lý</option>
+                    <option value="1" {{($order->status == 1) ? 'selected' : 0}}>Xác nhận</option>
+                    <option value="2" {{($order->status == 2) ? 'selected' : 0}}>Đã giao cho DVVC</option>
+                    <option value="3" {{($order->status == 3) ? 'selected' : 0}}>Đã nhận</option>
+                    <option value="4" {{($order->status == 4) ? 'selected' : 0}}>Đã hủy</option>
                   </select>
                 </td>
                 <td>

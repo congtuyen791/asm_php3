@@ -18,16 +18,11 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->role == 1 && Auth::user()->status == 1){
+            if(Auth::user()){
                 return $next($request);
-            }elseif((Auth::user()->role == 0 || Auth::user()->role == 1) && Auth::user()->status == 1){
-                return redirect('/');
-            } else {
-                // dd(Auth::user()->name);
-                session('false', 'Tài khoản của bạn đã bị khóa');
-                return redirect()->route('logout');
             }
         }else{
+            session()->flash('false', 'Bạn cần đăng  nhập để thực hiện chức năng này!');
             return redirect()->route('auth.getLogin');
         }
     }

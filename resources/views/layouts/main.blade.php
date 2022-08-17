@@ -36,7 +36,7 @@
     </div>
     @endif
     @if(session()->has('false'))
-    <div class="alert alert-success text-center">
+    <div class="alert alert-danger text-center">
         {{ session()->get('false') }}
     </div>
     @endif
