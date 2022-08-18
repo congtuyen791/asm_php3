@@ -26,19 +26,36 @@ class CartController extends Controller
             $cart = Cart::where('product_id', $id)->where('user_id', Auth::user()->id)->first();
             $product = Product::select('*')->where('id', $id)->first();
             // dd($product['price']);
-            if ($cart && $cart->product_id == $id) {
-                $cart->quantity = $cart->quantity + 1;
-                $cart->tong_tien = $cart->quantity * $product['price'];
-                $cart->save();
+            if($product->promotion == null) {
+                if ($cart && $cart->product_id == $id) {
+                    $cart->quantity = $cart->quantity + 1;
+                    $cart->tong_tien = $cart->quantity * $product['price'];
+                    $cart->save();
+                    return redirect()->route('listCart');
+                }
+                $data['product_id'] = $id;
+                $data['quantity'] = 1;
+                $data['price'] = $product['price'];
+                $data['user_id'] = Auth::user()->id;
+                $data['tong_tien'] = 1 * $product['price'];
+                Cart::create($data);
+                return redirect()->route('listCart');
+            }else{
+                if ($cart && $cart->product_id == $id) {
+                    $cart->quantity = $cart->quantity + 1;
+                    $cart->tong_tien = $cart->quantity * $product['promotion'];
+                    $cart->save();
+                    return redirect()->route('listCart');
+                }
+                // dd($product->promotion);
+                $data['product_id'] = $id;
+                $data['quantity'] = 1;
+                $data['price'] = $product['promotion'];
+                $data['user_id'] = Auth::user()->id;
+                $data['tong_tien'] = 1 * $product['promotion'];
+                Cart::create($data);
                 return redirect()->route('listCart');
             }
-            $data['product_id'] = $id;
-            $data['quantity'] = 1;
-            $data['price'] = $product['price'];
-            $data['user_id'] = Auth::user()->id;
-            $data['tong_tien'] = 1 * $product['price'];
-            Cart::create($data);
-            return redirect()->route('listCart');
         }else{
             session()->flash('false', 'Bạn cần đăng nhập để thực hiện chức năng này!');
             return redirect()->route('auth.getLogin');

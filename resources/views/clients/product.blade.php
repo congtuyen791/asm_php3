@@ -32,7 +32,7 @@
         <div class="product_top_bar">
           <form action="{{route('searchProduct')}}" class="input-group" width="500px" method="get">
             @csrf
-            <input type="text" width="400px" name="name" placeholder="nhập vào sản phẩm muốn tìm..." class="form-control">
+            <input type="text" width="400px" name="name" placeholder="nhập vào sản phẩm muốn tìm..." class="form-control" required>
             <button class="btn btn-primary">Tìm kiếm</button>
           </form>
         </div>
@@ -59,10 +59,16 @@
                   <a href="{{route('productDetail', $item->id)}}" class="d-block">
                     <h4>{{$item->name}}</h4>
                   </a>
+                  @if($item->promotion == null)
                   <div class="mt-3">
                     <span class="mr-4">{{$item->price}} <sup>đ</sup></span>
-                    <!-- <del>{{$item->price}} <sup>đ</sup></del> -->
                   </div>
+                  @else
+                  <div class="mt-3">
+                    <span class="mr-4">{{$item->promotion}} <sup>đ</sup></span>
+                    <del>{{$item->price}} <sup>đ</sup></del>
+                  </div>
+                  @endif
                 </div>
               </div>
             </div>

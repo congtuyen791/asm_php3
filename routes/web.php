@@ -16,6 +16,7 @@ use App\Http\Controllers\UserController;
 
 // trỏ đến giao diện người dùng
 Route::prefix('/')->name('')->group(function () {
+    // hien thi 
     Route::get('/', [ClientController::class, 'index'])->name('home');
     Route::get('/product-detail/{id}', [ClientController::class, 'productDetail'])->name('productDetail');
     Route::get('/product', [ClientController::class, 'product'])->name('product');
@@ -24,15 +25,11 @@ Route::prefix('/')->name('')->group(function () {
     Route::get('/searchProduct', [ClientController::class, 'searchProduct'])->name('searchProduct');
     // liên hệ
     Route::get('/contact', [ClientController::class, 'contact'])->name('contact');
-    
+    // gio hang
     Route::get('/listCart', [CartController::class, 'listCart'])->name('listCart');
-    
     Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
-    Route::middleware('admin')->prefix('')->name('')->group(function () {
-        // giỏ hàng
-        // đơn hàng
-    });
+    // don hang
     Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
     Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
     Route::get('/order-detail', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
@@ -40,7 +37,7 @@ Route::prefix('/')->name('')->group(function () {
     Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
     // liên hệ
     Route::post('/lien-he', [LienHeController::class, 'create'])->name('lienHe');
-    
+    // trang ca nhan 
     Route::post('/cap-nhat-tai-khoan/{id}', [ClientController::class, 'updateUser'])->name('updateUser');
     Route::get('/cap-nhat-mat-khau', [ClientController::class, 'getUpdateUserPassword'])->name('getUpdateUserPassword');
     Route::post('/cap-nhat-mat-khau/{id}', [ClientController::class, 'updateUserPassword'])->name('updateUserPassword');

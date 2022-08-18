@@ -52,7 +52,7 @@
                 </div>
               </td>
               <td>
-                <h5>{{$item->product->price}}</h5>
+                <h5>{{$item->price}}</h5>
               </td>
               <td>
                 <div class="product_count">

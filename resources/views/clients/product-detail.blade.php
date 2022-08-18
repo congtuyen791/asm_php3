@@ -37,7 +37,16 @@
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
           <h3>{{$product->name}}</h3>
-          <h2>{{$product->price}}</h2>
+          @if($product->promotion == null)
+          <div class="mt-3">
+            <span class="mr-4">{{$product->price}} <sup>đ</sup></span>
+          </div>
+          @else
+          <div class="mt-3">
+            <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
+            <del>{{$product->price}} <sup>đ</sup></del>
+          </div>
+          @endif
           <ul class="list">
             <li>
               <a class="" href="#">

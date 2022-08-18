@@ -100,10 +100,17 @@
                         <a href="{{route('productDetail', $product->id)}}" class="d-block">
                             <h4>{{$product->name}}</h4>
                         </a>
+                        @if($product->promotion == null)
                         <div class="mt-3">
                             <span class="mr-4">{{$product->price}} <sup>đ</sup></span>
                             <!-- <del>{{$product->price}} <sup>đ</sup></del> -->
                         </div>
+                        @else
+                        <div class="mt-3">
+                            <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
+                            <del>{{$product->price}} <sup>đ</sup></del>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -144,7 +151,7 @@
 
         <div class="row">
             <div class="col-lg-6">
-            @foreach($sofa as $item)
+                @foreach($sofa as $item)
                 <div class="new_product">
                     <h5 class="text-uppercase">Mẫu Sofa mới nhất 2022</h5>
                     <h3 class="text-uppercase">{{$item->name}}</h3>
@@ -179,10 +186,17 @@
                                 <a href="{{route('productDetail', $product->id)}}" class="d-block">
                                     <h4>{{$product->name}}</h4>
                                 </a>
+                                @if($product->promotion == null)
                                 <div class="mt-3">
                                     <span class="mr-4">{{$product->price}} <sup>đ</sup></span>
                                     <!-- <del>{{$product->price}} <sup>đ</sup></del> -->
                                 </div>
+                                @else
+                                <div class="mt-3">
+                                    <span class="mr-4">{{$product->promotion}} <sup>đ</sup></span>
+                                    <del>{{$product->price}} <sup>đ</sup></del>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>

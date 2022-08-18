@@ -67,9 +67,10 @@ class OrderController extends Controller
     //         return redirect()->back();
     //     }
     // }
-    public function viewOrderDetail()
+    public function viewOrderDetail($id)
     {
         $orderDetail = OrderDetail::select('*')->with('product')->get();
+        $orderDetail = OrderDetail::select('*')->with('order')->with('product')->where('order_details.order_id', $id)->get();
         // dd($orderDetail);
         return view('clients.order-detail', ['orderDetail' => $orderDetail]);
     }

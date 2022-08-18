@@ -36,7 +36,11 @@
                                 <td class="text-center"><img src="{{asset($item->product->avatar)}}" style="width: 80px; height: 80px" alt="" /></td>
                                 <td>{{$item->product->name}}</td>
                                 <td class="text-center">{{$item->quantity}}</td>
+                                @if ($item->product->promotion == null)
                                 <td class="text-center">{{$item->product->price}}</td>
+                                @else
+                                <td class="text-center">{{$item->product->promotion}}</td>
+                                @endif
                                 <td class="text-center">{{$item->thanh_tien}}</td>
                             </tr>
                             @endforeach
