@@ -16,11 +16,12 @@ class CommentController extends Controller
     public function delete(Comment $id)
     {
         if ($id->delete()) {
-        session()->flash('success','Xóa comment thành công!');
+            session()->flash('success', 'Xóa comment thành công!');
             return redirect()->back();
         }
     }
-    public function create(Request $request, $id) {
+    public function create(Request $request, $id)
+    {
         $data = new Comment();
         $data->content = $request->content;
         $data->user_id = Auth::user()->id;
@@ -28,5 +29,15 @@ class CommentController extends Controller
         // dd($data);
         $data->save();
         return redirect()->route('productDetail', $id);
+    }
+
+    public function clientDelete($id)
+    {
+        if (Auth::user()) {
+            $comment = Comment::find($id)->where('user_id', Auth::user()->id);
+            $comment->delete($id);
+            session()->flash('success', 'Xóa comment thành công!');
+            return redirect()->back();
+        }
     }
 }

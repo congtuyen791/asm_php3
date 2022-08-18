@@ -16,28 +16,31 @@ use App\Http\Controllers\UserController;
 
 // trỏ đến giao diện người dùng
 Route::prefix('/')->name('')->group(function () {
-    // hien thi 
+    // hien thi =============================================================================================================================
     Route::get('/', [ClientController::class, 'index'])->name('home');
     Route::get('/product-detail/{id}', [ClientController::class, 'productDetail'])->name('productDetail');
     Route::get('/product', [ClientController::class, 'product'])->name('product');
     Route::get('/categoryProducts/{id}', [ClientController::class, 'categoryProducts'])->name('categoryProducts');
     Route::get('/sizeProducts/{id}', [ClientController::class, 'sizeProducts'])->name('sizeProducts');
     Route::get('/searchProduct', [ClientController::class, 'searchProduct'])->name('searchProduct');
-    // liên hệ
+    // liên hệ=============================================================================================================================
     Route::get('/contact', [ClientController::class, 'contact'])->name('contact');
-    // gio hang
+    // gio hang=============================================================================================================================
     Route::get('/listCart', [CartController::class, 'listCart'])->name('listCart');
     Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
-    // don hang
+    // don hang =============================================================================================================================
     Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
     Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
-    Route::get('/order-detail', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
-    // bình luận 
+    Route::get('order-view', [OrderController::class, 'orderView'])->name('orderView');
+    Route::get('/order-detail/{id}', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
+    Route::post('order-update/{id}', [OrderController::class, 'updateOrder'])->name('updateOrder');
+    // bình luận =============================================================================================================================
     Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
-    // liên hệ
+    Route::get('/delete-comment/{id}', [CommentController::class, 'clientDelete'])->name('clientDelete');
+    // liên hệ=============================================================================================================================
     Route::post('/lien-he', [LienHeController::class, 'create'])->name('lienHe');
-    // trang ca nhan 
+    // trang ca nhan =============================================================================================================================
     Route::post('/cap-nhat-tai-khoan/{id}', [ClientController::class, 'updateUser'])->name('updateUser');
     Route::get('/cap-nhat-mat-khau', [ClientController::class, 'getUpdateUserPassword'])->name('getUpdateUserPassword');
     Route::post('/cap-nhat-mat-khau/{id}', [ClientController::class, 'updateUserPassword'])->name('updateUserPassword');
@@ -84,6 +87,7 @@ Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () 
         Route::get('/edit/{id}', [CommentController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [CommentController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [CommentController::class, 'delete'])->name('delete');
+        
     });
     Route::prefix('/orders')->name('orders.')->group(function () {
         Route::get('/list', [OrderController::class, 'index'])->name('list');

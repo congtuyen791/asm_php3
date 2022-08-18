@@ -120,9 +120,16 @@
                   </div>
                   @endif
                   <div class="media-body">
-                    <h4>{{$comment->user->name}}</h4>
+                    @if($comment->user_id == Auth::user()->id)
+                    <a href="{{route('clientDelete',  $comment->id)}}" class="reply_btn" style="background: none">
+                      <i class="ti-trash"></i>
+                    </a>
+                    @endif
+                    <span>
+                      <h4>{{$comment->user->name}}</h4>
+                      <h5> | {{($comment->user->role == 1) ? 'Admin' : 'khách hàng'}}</h5>
+                    </span>
                     <h5 style="padding-left: 20px;">{{$comment->created_at}}</h5>
-                    <!-- <a class="reply_btn" href="#">Reply</a> -->
                   </div>
                 </div>
                 <p>

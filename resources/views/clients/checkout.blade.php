@@ -27,18 +27,22 @@
         <div class="col-lg-12">
           <form class="row contact_form" action="#" method="post" novalidate="novalidate">
             <div class="col-md-12 form-group">
+              <label for="name">Họ và tên:</label>
               <input type="text" class="form-control" id="name" name="name" value="{{Auth::user()->name}}" placeholder="" disabled />
             </div>
             <div class="col-md-12 form-group p_star">
+            <label for="phone">Số điện thoại:</label>
               <input type="text" class="form-control" id="number" name="phone" value="{{Auth::user()->phone}}" disabled />
             </div>
             <div class="col-md-12 form-group p_star">
+              <label for="email">Email:</label>
               <input type="text" class="form-control" id="email" value="{{Auth::user()->email}}" name="email" disabled />
             </div>
             <!-- @if (Auth::user()->address == null)
             <input type="text">
             @else -->
             <div class="col-md-12 form-group p_star">
+              <label for="address">Địa chỉ nhận hàng:</label>
               <select class="country_select" disabled>
                 <option value="{{Auth::user()->address}}">{{Auth::user()->address}}</option>
               </select>

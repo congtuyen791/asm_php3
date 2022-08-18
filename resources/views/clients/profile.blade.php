@@ -28,9 +28,9 @@
             <div class="card-body">
               <div class="d-flex flex-column align-items-center text-center">
                 @if(Auth::user()->avatar == Null)
-                <img src="{{asset(img/avatar7.png)}}" alt="avatar" class="rounded-circle" width="150">
+                <img src="{{asset('img/avatar7.png')}}" alt="ảnh đại diện" class="rounded-circle" width="150" height="150" />
                 @else
-                <img src="{{asset(Auth::user()->avatar)}}" alt="avatar" class="rounded-circle" width="150">
+                <img src="{{asset(Auth::user()->avatar)}}" alt="ảnh đại diện" class="rounded-circle" width="150" height="150" />
                 @endif
                 <div class="mt-3">
                   <h4>{{Auth::user()->name}}</h4>

@@ -17,7 +17,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{route('orderDetail')}}">
+                <a href="{{route('orderView')}}">
                   kiểm tra đơn hàng
                 </a>
               </li>
