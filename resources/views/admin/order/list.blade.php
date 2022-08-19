@@ -16,7 +16,8 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>ngay giao</th>
+              <th>Ngày đặt hàng</th>
+              <th>Ngày giao hàng</th>
               <th>Tổng tiền</th>
               <th>Trạng thái</th>
               <th colspan="2">Chức năng</th>
@@ -29,6 +30,7 @@
               <tr>
                 <td>{{$order->id}}</td>
                 <td>{{$order->user->name}}</td>
+                <td>{{$order->created_at}}</td>
                 @if($order->ngay_giao == null)
                 <td>
                   <input type="date" name="ngay_giao" class="btn btn-info">

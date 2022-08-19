@@ -13,7 +13,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::select('id', 'user_id', 'ngay_giao', 'noi_giao_hang', 'status', 'tong_tien')->with('user')->orderBy('id', 'desc')->paginate(10);
+        $orders = Order::select('*')->with('user')->orderBy('id', 'desc')->paginate(10);
 
         return view('admin.order.list', ['orders' => $orders]);
     }

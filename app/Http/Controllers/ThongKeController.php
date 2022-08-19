@@ -21,11 +21,14 @@ class ThongKeController extends Controller
         $comments = Comment::all()->count();
         $category = Category::all()->count();
 
-        $category_bd = DB::table('categorys')->select(DB::raw('count(*) as SL, categorys.id'))
+        $category_bd = DB::table('categorys')->select(DB::raw('count(*) as SL, categorys.name'))
             ->join('products', 'categorys.id', '=', 'products.category_id')
-            ->groupBy('categorys.id')
+            ->groupBy('categorys.name')
             ->get();
-        // dd($category_bd);
+            // foreach($category_bd as $item){
+            //     dd($item->name, $item->SL);
+
+            // }
         return view('admin.home', ['category' => $category, 'orders' => $orders, 'products' => $products, 'users' => $users, 'comments' => $comments, 'category_bd' => $category_bd]);
     }
 }

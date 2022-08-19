@@ -30,11 +30,14 @@ Route::prefix('/')->name('')->group(function () {
     Route::get('/addCart/{id}', [CartController::class, 'addCart'])->name('addCart');
     Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete');
     // don hang =============================================================================================================================
-    Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
-    Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
-    Route::get('order-view', [OrderController::class, 'orderView'])->name('orderView');
-    Route::get('/order-detail/{id}', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
-    Route::post('order-update/{id}', [OrderController::class, 'updateOrder'])->name('updateOrder');
+    Route::middleware('admin')->prefix('')->name('')->group(function (){
+
+        Route::get('/order/{tt}', [OrderController::class, 'getOrder'])->name('order');
+        Route::get('/add-order/{tt}', [OrderController::class, 'addOrder'])->name('addOrder');
+        Route::get('order-view', [OrderController::class, 'orderView'])->name('orderView');
+        Route::get('/order-detail/{id}', [OrderController::class, 'viewOrderDetail'])->name('orderDetail');
+        Route::post('order-update/{id}', [OrderController::class, 'updateOrder'])->name('updateOrder');
+    });
     // bình luận =============================================================================================================================
     Route::post('/comment/{id}', [CommentController::class, 'create'])->name('comment');
     Route::get('/delete-comment/{id}', [CommentController::class, 'clientDelete'])->name('clientDelete');
